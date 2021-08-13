@@ -1,0 +1,96 @@
+@import "../../Common/variable/_Variable";
+
+@mixin buttonComponent($color) {
+  border-radius: 50%;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  border: 1px solid $color;
+  background-color: $color;
+  cursor: pointer;
+  color: $whiteColor;
+}
+.parent_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10rem;
+
+  .main_div {
+    background-color: $whiteColor;
+    min-width: 40rem;
+    min-height: 50rem;
+    border-radius: 2rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3.4rem;
+    font-style: italic;
+    color: $titleColor;
+    margin-bottom: 5rem;
+  }
+}
+input {
+  text-align: center;
+  border: none;
+  font-size: 1.6rem;
+  width: 70%;
+  border-bottom: 2px solid $underline;
+  outline: none;
+}
+.add-btn {
+  @include buttonComponent($titleColor);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.remove_btn {
+  width: 8rem;
+  height: 2rem;
+  background-color: $titleColor;
+  color: $whiteColor;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border: 1px solid $titleColor;
+  &:hover {
+    background-color: orangered;
+  }
+}
+.showlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  .eachItem {
+    display: flex;
+    align-items: center;
+    width: 23rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    background-color: $titleColor;
+    border-radius: 0.8rem;
+    p {
+      font-size: 1.6rem;
+      color: $whiteColor;
+      margin-left: 1rem;
+    }
+    .delete-btn {
+      @include buttonComponent($deleteBtn);
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: 768px) {
+  font-size: 50%;
+  h1{
+    color:red;
+  }
+}
+@media (max-width: 400px) {
+  font-size: 30%;
+}
